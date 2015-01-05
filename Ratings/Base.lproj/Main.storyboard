@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4Jg-W4-Le8">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Gestures-->
+        <scene sceneID="9qL-ad-s33">
+            <objects>
+                <viewController id="Dee-JV-N9A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MOn-Ym-nQT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Tab" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mKi-KQ-Iov">
+                                <rect key="frame" x="139" y="61" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gestures" image="Gestures.png" id="mOx-Nm-5IO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKc-wK-gCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="663"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MrL-Cf-2TY">
+            <objects>
+                <tabBarController id="4Jg-W4-Le8" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Y7R-mP-lWV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dZj-1I-BNZ" kind="relationship" relationship="viewControllers" id="NmV-pn-yYQ"/>
+                        <segue destination="Dee-JV-N9A" kind="relationship" relationship="viewControllers" id="KC6-aM-tA9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWt-dU-eTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="348"/>
+        </scene>
+        <!--Players-->
+        <scene sceneID="H9U-a7-tWw">
+            <objects>
+                <tableViewController id="VTp-Ub-wBu" customClass="PlayersTableViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CX8-UJ-DFh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="DXu-q8-mi6" customClass="PlayerCell" customModule="Ratings" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXu-q8-mi6" id="lMT-q2-lSv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PVD-71-Mgp">
+                                            <rect key="frame" x="8" y="8" width="190" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kQt-16-sZl">
+                                            <rect key="frame" x="8" y="25" width="190" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2Ue-LW-tv6">
+                                            <rect key="frame" x="206" y="13" width="81" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameLabel" destination="kQt-16-sZl" id="AZ6-Vq-jmm"/>
+                                    <outlet property="nameLabel" destination="PVD-71-Mgp" id="dcu-wa-dRU"/>
+                                    <outlet property="ratingImageView" destination="2Ue-LW-tv6" id="SRg-td-W9z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VTp-Ub-wBu" id="LXD-4I-QhA"/>
+                            <outlet property="delegate" destination="VTp-Ub-wBu" id="NSN-MJ-Jwy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Players" id="ou4-YE-oJ2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0u6-da-JHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="78"/>
+        </scene>
+        <!--Players-->
+        <scene sceneID="LjG-qw-AmW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZj-1I-BNZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Players" image="Players.png" id="kt0-yB-Enw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RIZ-vt-KtX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VTp-Ub-wBu" kind="relationship" relationship="rootViewController" id="hHi-bm-Z2C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb4-l5-KHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gestures.png" width="30" height="30"/>
+        <image name="Players.png" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
