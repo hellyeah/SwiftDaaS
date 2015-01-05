@@ -10,6 +10,6 @@ import Foundation
 
 //Set up sample data
 
-let playersData = [ Player(name:"Bill Evans", game:"Tic-Tac-Toe", rating: 4),
-    Player(name: "Oscar Peterson", game: "Spin the Bottle", rating: 5),
-    Player(name: "Dave Brubeck", game: "Texas Hold 'em Poker", rating: 2) ]
+let startupsData = [ Startup(name:"Bill Evans", type:"Tic-Tac-Toe", rating: 4),
+    Startup(name: "Oscar Peterson", type: "Spin the Bottle", rating: 5),
+    Startup(name: "Dave Brubeck", type: "Texas Hold 'em Poker", rating: 2) ]
