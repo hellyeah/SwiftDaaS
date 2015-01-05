@@ -1,5 +1,5 @@
 //
-//  PlayersTableViewController.swift
+//  GamePickerViewController.swift
 //  Ratings
 //
 //  Created by David Fontenot on 1/5/15.
@@ -8,72 +8,81 @@
 
 import UIKit
 
-class PlayersTableViewController: UITableViewController {
+class GamePickerViewController: UITableViewController {
     
-    var players: [Player] = playersData
-
+    var games:[String]!
+    
+    var selectedGame:String? = nil
+    var selectedGameIndex:Int? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        games = ["Angry Birds",
+            "Chess",
+            "Russian Roulette",
+            "Spin the Bottle",
+            "Texas Hold'em Poker",
+            "Tic-Tac-Toe"]
+        
+        if let game = selectedGame {
+            selectedGameIndex = find(games, game)!
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func imageForRating(rating:Int) -> UIImage? {
-        switch rating {
-        case 1:
-            return UIImage(named: "1StarSmall")
-        case 2:
-            return UIImage(named: "2StarsSmall")
-        case 3:
-            return UIImage(named: "3StarsSmall")
-        case 4:
-            return UIImage(named: "4StarsSmall")
-        case 5:
-            return UIImage(named: "5StarsSmall")
-        default:
-            return nil
-        }
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return players.count
+        return games.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell", forIndexPath: indexPath)
-            as PlayerCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("GameCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = games[indexPath.row]
         
-        let player = players[indexPath.row] as Player
-        cell.nameLabel.text = player.name
-        cell.gameLabel.text = player.game
-        cell.ratingImageView.image = imageForRating(player.rating)
+        if indexPath.row == selectedGameIndex {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 55
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //Other row is selected - need to deselect it
+        if let index = selectedGameIndex {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+            cell?.accessoryType = .None
+        }
+        
+        selectedGameIndex = indexPath.row
+        selectedGame = games[indexPath.row]
+        
+        //update the checkmark for the current row
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = .Checkmark
     }
-    
+
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -112,23 +121,16 @@ class PlayersTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
-    
-    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
-        let playerDetailsViewController = segue.sourceViewController as PlayersDetailViewController
-        
-        //add the new player to the players array
-        players.append(playerDetailsViewController.player)
-        
-        //update the tableView
-        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        
-        //hide the detail view controller
-        dismissViewControllerAnimated(true, completion: nil)
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveSelectedGame" {
+            let cell = sender as UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            selectedGameIndex = indexPath?.row
+            if let index = selectedGameIndex {
+                selectedGame = games[index]
+            }
+        }
     }
 
     /*
@@ -138,6 +140,5 @@ class PlayersTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
 
 }

@@ -41,6 +41,8 @@
 		6FA7A6A81A5A8BBB009E52A8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A6A71A5A8BBB009E52A8 /* Player.swift */; };
 		6FA7A6AA1A5A8BE2009E52A8 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A6A91A5A8BE2009E52A8 /* SampleData.swift */; };
 		6FA7A6AC1A5A8EDB009E52A8 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A6AB1A5A8EDB009E52A8 /* PlayerCell.swift */; };
+		6FA7A6AE1A5A9247009E52A8 /* PlayersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A6AD1A5A9247009E52A8 /* PlayersDetailViewController.swift */; };
+		6FA7A6B01A5A9DD5009E52A8 /* GamePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A6AF1A5A9DD5009E52A8 /* GamePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		6FA7A6A71A5A8BBB009E52A8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6FA7A6A91A5A8BE2009E52A8 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		6FA7A6AB1A5A8EDB009E52A8 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		6FA7A6AD1A5A9247009E52A8 /* PlayersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersDetailViewController.swift; sourceTree = "<group>"; };
+		6FA7A6AF1A5A9DD5009E52A8 /* GamePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +140,10 @@
 				6FA7A6121A5A77F3009E52A8 /* Images */,
 				6FA7A5F21A5A73CA009E52A8 /* AppDelegate.swift */,
 				6FA7A5F41A5A73CA009E52A8 /* ViewController.swift */,
-				6FA7A6AB1A5A8EDB009E52A8 /* PlayerCell.swift */,
 				6FA7A6A51A5A8B66009E52A8 /* PlayersTableViewController.swift */,
+				6FA7A6AD1A5A9247009E52A8 /* PlayersDetailViewController.swift */,
+				6FA7A6AF1A5A9DD5009E52A8 /* GamePickerViewController.swift */,
+				6FA7A6AB1A5A8EDB009E52A8 /* PlayerCell.swift */,
 				6FA7A5F61A5A73CA009E52A8 /* Main.storyboard */,
 				6FA7A6A71A5A8BBB009E52A8 /* Player.swift */,
 				6FA7A6A91A5A8BE2009E52A8 /* SampleData.swift */,
@@ -328,7 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FA7A6B01A5A9DD5009E52A8 /* GamePickerViewController.swift in Sources */,
 				6FA7A6AC1A5A8EDB009E52A8 /* PlayerCell.swift in Sources */,
+				6FA7A6AE1A5A9247009E52A8 /* PlayersDetailViewController.swift in Sources */,
 				6FA7A6A81A5A8BBB009E52A8 /* Player.swift in Sources */,
 				6FA7A5F51A5A73CA009E52A8 /* ViewController.swift in Sources */,
 				6FA7A5F31A5A73CA009E52A8 /* AppDelegate.swift in Sources */,
