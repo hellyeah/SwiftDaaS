@@ -12,14 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // FIREBASE Initialization
     var myRootRef = Firebase(url:"https://chat-swift.firebaseio.com/")
     
+    // Firebase Implementation
     func readDataFromFirebase() {
         // Read data and react to changes
         myRootRef.observeEventType(.Value, withBlock: {
             snapshot in
             println("\(snapshot.key) -> \(snapshot.value)")
         })
+    }
+    
+    func writeDataToFirebase () {
+        // Write data to Firebase
+        myRootRef.setValue("Do you have data? You'll love Firebase.")
     }
 
 
