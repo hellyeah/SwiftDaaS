@@ -7,7 +7,7 @@
         <!--Gestures-->
         <scene sceneID="9qL-ad-s33">
             <objects>
-                <viewController id="Dee-JV-N9A" sceneMemberID="viewController">
+                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOn-Ym-nQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
