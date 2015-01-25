@@ -133,13 +133,15 @@ class StartupsTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "OpenWebView" {
-            let startupsWebViewController = segue.destinationViewController as StartupsWebViewController
+
             let cell = sender as UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
             
+            let indexPath = tableView.indexPathForCell(cell)
             let startupURLIndex = indexPath?.row
+            
             if let index = startupURLIndex {
-                startupsWebViewController.startupURL = startups[index].url
+                let destinationVC = segue.destinationViewController as StartupsWebViewController
+                destinationVC.startupURL = startups[index].url
             }
         }
     }

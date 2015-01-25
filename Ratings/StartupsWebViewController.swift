@@ -12,17 +12,18 @@ class StartupsWebViewController: UIViewController {
 
     var startupURL:String? = nil
     
-    required init(coder aDecoder: NSCoder) {
-        println("init StartupsDetailViewController")
-        super.init(coder: aDecoder)
-    }
-    
-    deinit {
-        println("deinit StartupsDetailViewController")
-    }
-    
+    @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("\(startupURL)")
+        
+        let requestURL = NSURL(string:"http://\(startupURL!)")
+
+        if let url = requestURL {
+            let request = NSURLRequest(URL: url)
+            webView.loadRequest(request)
+        }
+
 
         
         // Uncomment the following line to preserve selection between presentations

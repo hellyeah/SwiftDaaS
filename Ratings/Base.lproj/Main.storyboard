@@ -7,7 +7,7 @@
         <!--Gestures-->
         <scene sceneID="9qL-ad-s33">
             <objects>
-                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" sceneMemberID="viewController">
+                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOn-Ym-nQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,13 +50,16 @@
         <!--Startups Web View Controller-->
         <scene sceneID="bu0-nQ-DAg">
             <objects>
-                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Ff-Ia-UFO">
+                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="i1q-PT-Ixr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </webView>
                     <navigationItem key="navigationItem" id="OFG-AC-Sbs"/>
+                    <connections>
+                        <outlet property="webView" destination="i1q-PT-Ixr" id="lQx-VE-4b5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmb-yT-UQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
