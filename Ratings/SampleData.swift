@@ -10,6 +10,6 @@ import Foundation
 
 //Set up sample data
 
-let startupsData = [ Startup(name:"Bill Evans", type:"Tic-Tac-Toe", rating: 4),
-    Startup(name: "Oscar Peterson", type: "Spin the Bottle", rating: 5),
-    Startup(name: "Dave Brubeck", type: "Texas Hold 'em Poker", rating: 2) ]
+let startupsData = [ Startup(url: "uber.com", name:"Uber", type:"Interested", rating: 4),
+    Startup(url: "airbnb.com", name: "AirBnB", type: "Offer", rating: 5),
+    Startup(url: "path.com", name: "Path", type: "Rejected", rating: 2) ]

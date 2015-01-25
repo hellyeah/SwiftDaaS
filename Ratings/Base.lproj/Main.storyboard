@@ -7,7 +7,7 @@
         <!--Gestures-->
         <scene sceneID="9qL-ad-s33">
             <objects>
-                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOn-Ym-nQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,21 @@
             </objects>
             <point key="canvasLocation" x="-82" y="348"/>
         </scene>
+        <!--Startups Web View Controller-->
+        <scene sceneID="bu0-nQ-DAg">
+            <objects>
+                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ff-Ia-UFO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OFG-AC-Sbs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmb-yT-UQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-666"/>
+        </scene>
         <!--Startups-->
         <scene sceneID="H9U-a7-tWw">
             <objects>
@@ -85,6 +100,7 @@
                                     <outlet property="nameLabel" destination="PVD-71-Mgp" id="dcu-wa-dRU"/>
                                     <outlet property="ratingImageView" destination="2Ue-LW-tv6" id="SRg-td-W9z"/>
                                     <outlet property="typeLabel" destination="kQt-16-sZl" id="AZ6-Vq-jmm"/>
+                                    <segue destination="quM-UY-vaQ" kind="push" identifier="OpenWebView" id="rzk-t0-yaZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Startup Name" id="1PI-K1-x7S">
+                            <tableViewSection headerTitle="Startup Domain" id="1PI-K1-x7S">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wPm-8u-0xS">
                                         <autoresizingMask key="autoresizingMask"/>

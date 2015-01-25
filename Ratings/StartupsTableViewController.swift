@@ -130,6 +130,19 @@ class StartupsTableViewController: UITableViewController {
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "OpenWebView" {
+            let startupsWebViewController = segue.destinationViewController as StartupsWebViewController
+            let cell = sender as UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            
+            let startupURLIndex = indexPath?.row
+            if let index = startupURLIndex {
+                startupsWebViewController.startupURL = startups[index].url
+            }
+        }
+    }
 
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 
 class Startup: NSObject {
+    var url: String
     var name: String
     var type: String
     var rating: Int
     
-    init(name: String, type: String, rating: Int) {
+    init(url: String, name: String, type: String, rating: Int) {
+        self.url = url
         self.name = name
         self.type = type
         self.rating = rating

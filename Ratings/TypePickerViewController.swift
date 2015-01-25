@@ -17,12 +17,12 @@ class TypePickerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        types = ["Angry Birds",
-            "Chess",
-            "Russian Roulette",
-            "Spin the Bottle",
-            "Texas Hold'em Poker",
-            "Tic-Tac-Toe"]
+        types = ["Interested",
+            "Interviewing",
+            "Introd",
+            "Offer",
+            "Rejected",
+            "Dream"]
         
         if let type = selectedType {
             selectedTypeIndex = find(types, type)!

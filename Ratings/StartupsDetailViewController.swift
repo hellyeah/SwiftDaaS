@@ -14,7 +14,7 @@ class StartupsDetailViewController: UITableViewController {
     @IBOutlet var detailLabel: UILabel!
     
     var startup:Startup!
-    var type:String = "Chess"
+    var type:String = "Interested"
     
     required init(coder aDecoder: NSCoder) {
         println("init StartupsDetailViewController")
@@ -112,7 +112,7 @@ class StartupsDetailViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveStartupDetail" {
-            startup = Startup(name: self.nameTextField.text, type: type, rating: 1)
+            startup = Startup(url: "\(self.nameTextField.text).com", name: self.nameTextField.text, type: type, rating: 1)
         }
         if segue.identifier == "PickType" {
             let typePickerViewController = segue.destinationViewController as TypePickerViewController
