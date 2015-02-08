@@ -69,12 +69,13 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
         let cell = self.tableView.dequeueReusableCellWithIdentifier("StartupCell", forIndexPath: indexPath)
             as StartupCell
         
-        var startup = startups[indexPath.row] as Startup
+        var startup: Startup
+//= startups[indexPath.row] as Startup
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            startup = filteredStartups[indexPath.row]
+            startup = filteredStartups[indexPath.row] as Startup
         } else {
-            startup = startups[indexPath.row]
+            startup = startups[indexPath.row] as Startup
         }
         
         cell.nameLabel.text = startup.name
@@ -86,6 +87,13 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 55
+    }
+    
+    //manually providing segue
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            self.performSegueWithIdentifier("OpenWebView", sender: tableView.cellForRowAtIndexPath(indexPath))
+        }
     }
     
 
@@ -168,16 +176,34 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "OpenWebView" {
+            
+//            //NEW
+            //sender is sometimes cell sometimes uitableview
+            
+                //OLD
+                let cell = sender as UITableViewCell
+                //pass different data if filtered
+                //not recognizing search table view
+                if tableView == self.searchDisplayController!.searchResultsTableView {
+                    let indexPath = tableView.indexPathForCell(cell)
+                    let startupURLIndex = indexPath?.row
+                    
+                    if let index = startupURLIndex {
+                        let destinationVC = segue.destinationViewController as StartupsWebViewController
+                        destinationVC.startupURL = self.filteredStartups[index].url
+                    }
+                } else {
+                    let indexPath = tableView.indexPathForCell(cell)
+                    let startupURLIndex = indexPath?.row
+                    
+                    if let index = startupURLIndex {
+                        let destinationVC = segue.destinationViewController as StartupsWebViewController
+                        destinationVC.startupURL = self.startups[index].url
+                    }
+                }
 
-            let cell = sender as UITableViewCell
-            
-            let indexPath = tableView.indexPathForCell(cell)
-            let startupURLIndex = indexPath?.row
-            
-            if let index = startupURLIndex {
-                let destinationVC = segue.destinationViewController as StartupsWebViewController
-                destinationVC.startupURL = startups[index].url
-            }
+        
+
         }
     }
 

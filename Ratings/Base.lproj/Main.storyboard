@@ -120,12 +120,8 @@
                             <outlet property="delegate" destination="VTp-Ub-wBu" id="NSN-MJ-Jwy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Startups" id="ou4-YE-oJ2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="olE-kx-Ngx">
-                            <connections>
-                                <segue destination="SJC-IA-pz0" kind="modal" id="e98-eB-Mds"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Startups" id="J8k-57-ohe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="duS-gj-FHP"/>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="agb-Pf-HK0" id="r2P-GB-FqT"/>
