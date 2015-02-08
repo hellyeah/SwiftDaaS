@@ -8,12 +8,14 @@
 
 import UIKit
 
-class StartupsTableViewController: UITableViewController {
+class StartupsTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate  {
     
     var startups: [Startup] = startupsData
+    var filteredStartups = [Startup]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,18 +57,30 @@ class StartupsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return startups.count
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredStartups.count
+        } else {
+            return self.startups.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("StartupCell", forIndexPath: indexPath)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("StartupCell", forIndexPath: indexPath)
             as StartupCell
         
-        let startup = startups[indexPath.row] as Startup
+        var startup = startups[indexPath.row] as Startup
+        
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            startup = filteredStartups[indexPath.row]
+        } else {
+            startup = startups[indexPath.row]
+        }
+        
         cell.nameLabel.text = startup.name
         cell.typeLabel.text = startup.type
         cell.ratingImageView.image = imageForRating(startup.rating)
+        
         return cell
     }
     
@@ -109,6 +123,27 @@ class StartupsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - Search
+    func filterContentForSearchText(searchText: String) {
+        // Filter the array using the filter method
+        self.filteredStartups = self.startups.filter({( startup: Startup) -> Bool in
+            //let typeMatch = (scope == "All") || (startup.type == scope)
+            //^not sure what this line does
+            let stringMatch = startup.url.lowercaseString.rangeOfString(searchText.lowercaseString)
+            return (stringMatch != nil)
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
 
     
     // MARK: - Navigation

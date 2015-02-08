@@ -73,8 +73,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for Startups" showsSearchResultsButton="YES" id="Hmg-8h-doL">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="VTp-Ub-wBu" id="l08-WU-x4c"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StartupCell" rowHeight="55" id="DXu-q8-mi6" customClass="StartupCell" customModule="DAAS" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="StartupCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StartupCell" rowHeight="55" id="DXu-q8-mi6" customClass="StartupCell" customModule="DAAS" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXu-q8-mi6" id="lMT-q2-lSv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -119,8 +127,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="agb-Pf-HK0" id="r2P-GB-FqT"/>
+                        <outlet property="tableView" destination="CX8-UJ-DFh" id="VAC-er-RF1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0u6-da-JHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="agb-Pf-HK0">
+                    <connections>
+                        <outlet property="delegate" destination="VTp-Ub-wBu" id="s28-Us-zeX"/>
+                        <outlet property="searchBar" destination="Hmg-8h-doL" id="0iI-6e-FXA"/>
+                        <outlet property="searchContentsController" destination="VTp-Ub-wBu" id="F1z-AV-Ko2"/>
+                        <outlet property="searchResultsDataSource" destination="VTp-Ub-wBu" id="lXb-p0-dEY"/>
+                        <outlet property="searchResultsDelegate" destination="VTp-Ub-wBu" id="clg-KT-tA2"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="935" y="78"/>
         </scene>
