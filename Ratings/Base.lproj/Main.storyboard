@@ -23,6 +23,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gestures" image="Gestures.png" id="mOx-Nm-5IO"/>
+                    <navigationItem key="navigationItem" id="f3e-9x-ddS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKc-wK-gCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,7 +122,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Startups" id="J8k-57-ohe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="duS-gj-FHP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="duS-gj-FHP">
+                            <connections>
+                                <segue destination="Dee-JV-N9A" kind="push" id="hzc-P5-fxL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Hmg-8h-doL" id="F3c-5I-i3t"/>
@@ -308,4 +313,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KC6-aM-tA9"/>
+    </inferredMetricsTieBreakers>
 </document>
