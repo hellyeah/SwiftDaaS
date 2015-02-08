@@ -10,8 +10,10 @@ import UIKit
 
 class StartupsTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate  {
     
+    @IBOutlet var searchBar: UISearchBar!
     var startups: [Startup] = startupsData
     var filteredStartups = [Startup]()
+    var globalIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,9 +93,10 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
     
     //manually providing segue
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            self.performSegueWithIdentifier("OpenWebView", sender: tableView.cellForRowAtIndexPath(indexPath))
-        }
+        //if tableView == self.searchDisplayController!.searchResultsTableView {
+            globalIndex = indexPath.row
+        //    self.performSegueWithIdentifier("OpenWebView", sender: tableView.cellForRowAtIndexPath(indexPath))
+        //}
     }
     
 
@@ -173,6 +176,7 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
     }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "OpenWebView" {
@@ -184,14 +188,17 @@ class StartupsTableViewController: UITableViewController, UISearchBarDelegate, U
                 let cell = sender as UITableViewCell
                 //pass different data if filtered
                 //not recognizing search table view
-                if tableView == self.searchDisplayController!.searchResultsTableView {
-                    let indexPath = tableView.indexPathForCell(cell)
-                    let startupURLIndex = indexPath?.row
-                    
-                    if let index = startupURLIndex {
-                        let destinationVC = segue.destinationViewController as StartupsWebViewController
-                        destinationVC.startupURL = self.filteredStartups[index].url
-                    }
+            if searchBar.text != "" {
+//                if tableView == self.searchDisplayController!.searchResultsTableView {
+//                    let indexPath = tableView.indexPathForCell(cell)
+//                    let startupURLIndex = indexPath?.row
+                    let destinationVC = segue.destinationViewController as StartupsWebViewController
+//                    
+//                    if let index = startupURLIndex {
+//                        let destinationVC = segue.destinationViewController as StartupsWebViewController
+//                        destinationVC.startupURL = self.filteredStartups[index].url
+//                    }
+                    destinationVC.startupURL = self.filteredStartups[globalIndex].url
                 } else {
                     let indexPath = tableView.indexPathForCell(cell)
                     let startupURLIndex = indexPath?.row

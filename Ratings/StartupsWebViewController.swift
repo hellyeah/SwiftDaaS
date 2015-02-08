@@ -21,6 +21,7 @@ class StartupsWebViewController: UIViewController {
 
         if let url = requestURL {
             let request = NSURLRequest(URL: url)
+            println("\(url)")
             webView.loadRequest(request)
         }
 

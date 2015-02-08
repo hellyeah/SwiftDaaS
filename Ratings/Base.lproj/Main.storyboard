@@ -50,7 +50,7 @@
         <!--Startups Web View Controller-->
         <scene sceneID="bu0-nQ-DAg">
             <objects>
-                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartupsWebViewController" id="quM-UY-vaQ" customClass="StartupsWebViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <webView key="view" contentMode="scaleToFill" id="i1q-PT-Ixr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,6 +124,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="duS-gj-FHP"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="Hmg-8h-doL" id="F3c-5I-i3t"/>
                         <outlet property="searchDisplayController" destination="agb-Pf-HK0" id="r2P-GB-FqT"/>
                         <outlet property="tableView" destination="CX8-UJ-DFh" id="VAC-er-RF1"/>
                     </connections>
