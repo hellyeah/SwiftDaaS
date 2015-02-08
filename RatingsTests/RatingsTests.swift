@@ -1,6 +1,6 @@
 //
-//  RatingsTests.swift
-//  RatingsTests
+//  DAASTests.swift
+//  DAASTests
 //
 //  Created by David Fontenot on 1/5/15.
 //  Copyright (c) 2015 HackMatch. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class RatingsTests: XCTestCase {
+class DAASTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

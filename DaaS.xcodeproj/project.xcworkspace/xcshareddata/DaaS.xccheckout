@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E015BF3B-A7AB-4864-B9C6-747DF5996515</string>
 	<key>IDESourceControlProjectName</key>
-	<string>DaaS</string>
+	<string>DAAS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>13F1678CECAA6B5A5AE07CE7616449C1D77AB677</key>
 		<string>https://github.com/hellyeah/SwiftDaaS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DaaS.xcodeproj</string>
+	<string>DAAS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>13F1678CECAA6B5A5AE07CE7616449C1D77AB677</key>

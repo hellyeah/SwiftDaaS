@@ -7,7 +7,7 @@
         <!--Gestures-->
         <scene sceneID="9qL-ad-s33">
             <objects>
-                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dee-JV-N9A" customClass="MessagesViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOn-Ym-nQT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Startups Web View Controller-->
         <scene sceneID="bu0-nQ-DAg">
             <objects>
-                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="quM-UY-vaQ" customClass="StartupsWebViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <webView key="view" contentMode="scaleToFill" id="i1q-PT-Ixr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,13 +68,13 @@
         <!--Startups-->
         <scene sceneID="H9U-a7-tWw">
             <objects>
-                <tableViewController id="VTp-Ub-wBu" customClass="StartupsTableViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="VTp-Ub-wBu" customClass="StartupsTableViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CX8-UJ-DFh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StartupCell" rowHeight="55" id="DXu-q8-mi6" customClass="StartupCell" customModule="Ratings" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StartupCell" rowHeight="55" id="DXu-q8-mi6" customClass="StartupCell" customModule="DAAS" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXu-q8-mi6" id="lMT-q2-lSv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -127,7 +127,7 @@
         <!--Add Startup-->
         <scene sceneID="km1-hf-sDT">
             <objects>
-                <tableViewController id="5IQ-KE-Pkc" customClass="StartupsDetailViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5IQ-KE-Pkc" customClass="StartupsDetailViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Hna-Ms-cX5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         <!--Choose Type-->
         <scene sceneID="BMM-Gf-ZRT">
             <objects>
-                <tableViewController id="skK-o2-3hi" customClass="TypePickerViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="skK-o2-3hi" customClass="TypePickerViewController" customModule="DAAS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7BH-zF-PfC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
